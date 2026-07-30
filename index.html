@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CRUDS</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="crud">
+        <!-- Head Section -->
+        <div class="head">
+            <h2>crud</h2>
+            <p>PRODUCT MANAGEMENT SYSTEM</p>
+        </div>
+
+        <div class="page">
+            <!-- Inputs Section -->
+            <div class="inputs">
+                <input placeholder="title" type="text" id="title">
+            
+                <div class="price">
+                    <input onkeyup="getTotal()" placeholder="price" type="number" id="price">
+                    <input onkeyup="getTotal()" placeholder="taxes" type="number" id="taxes">
+                    <input onkeyup="getTotal()" placeholder="ads" type="number" id="ads">
+                    <input onkeyup="getTotal()" placeholder="discount" type="number" id="discount">
+                    <small id="total"></small>
+                </div>
+            
+                <input placeholder="count" type="number" id="count">
+                <input placeholder="category" type="text" id="category">
+                <button id="submit">Create</button>
+            </div>
+            
+            <!-- Outputs Section -->
+            <div class="outputs">
+                <div class="searchBlock">
+                    <input onkeyup="searchData(this.value)" placeholder="search" type="text" id="search">
+                    <div class="btnSearch">
+                        <button onclick="getSearchMode(this.id)" id="searchTitle">Search By Title</button>
+                        <button onclick="getSearchMode(this.id)" id="searchCategory">Search By Category</button>
+                    </div>
+                </div>
+            
+                <div id="deleteAll"></div>
+            
+                <table>
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>title</th>
+                            <th>price</th>
+                            <th>taxes</th>
+                            <th>ads</th>
+                            <th>discount</th>
+                            <th>total</th>
+                            <th>category</th>
+                            <th>update</th>
+                            <th>delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <!-- البيانات يتم إضافتها هنا ديناميكيًا بواسطة الجافاسكريبت -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
